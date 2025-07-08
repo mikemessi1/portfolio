@@ -8,24 +8,22 @@
 </head>
 <body>
 
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="projets.html">Projets</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="citation.html">citations</a></li>
+<header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="projets.html">Projets</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      
+    </ul>
+  </nav>
+</header>
 
-
-      </ul>
-    </nav>
-  </header>
-
+<main>
   <section class="contact-section">
     <h1>Contactez-moi</h1>
 
-    <form class="contact-form" action="mailto:votremail@example.com" method="post" enctype="text/plain">
+    <form class="contact-form" onsubmit="envoyerMessage(event)" aria-label="Formulaire de contact">
       <label for="name">Nom :</label>
       <input type="text" id="name" name="name" required />
 
@@ -38,16 +36,26 @@
       <button type="submit">Envoyer</button>
     </form>
 
-    <div class="contact-info">
+    <div class="contact-info" aria-label="Coordonnées">
       <h2>Mes coordonnées</h2>
-      <p>Email : <a href="mailto:votremail@example.com">paulaquina97@gmail.com</a></p>
-      <p>Téléphone : +509 38 10 08 28</p>
+      <p>Email : <a href="mailto:mikemessikelaureparis@gmail.com">mikemessikelaureparis@gmail.com</a></p>
+      <p>Téléphone : +509 47 72 64 67</p>
+      <p>GitHub : <a href="https://github.com/tina509" target="_blank" rel="noopener noreferrer">tina509</a></p>
     </div>
   </section>
+</main>
 
-  <footer>
-    <p>&copy; 2025 - Mon Portfolio</p>
-  </footer>
+<footer>
+  <p>&copy; 2025 - Mon Portfolio</p>
+</footer>
+
+<script>
+  function envoyerMessage(e) {
+    e.preventDefault();
+    alert("Merci pour votre message. Je prendrai contact avec vous.");
+    document.querySelector('.contact-form').reset();
+  }
+</script>
 
 </body>
 </html>
